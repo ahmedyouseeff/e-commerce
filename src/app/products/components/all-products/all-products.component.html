@@ -1,0 +1,32 @@
+<div class="container" style="margin-top: 80px;">
+  <div class="row mb-3 w-25">
+    <app-select [title]="'Catigories'" [data]="categories" (selectedValue)="filterByCategory($event)"></app-select>
+  </div>
+
+  <div class="row" *ngIf="!loader">
+    <div class="col-md-3 mb-4 cursor-pointer" *ngFor="let product of products">
+      <app-product [data]="product" (item)="addToCart($event)"></app-product>
+
+      <!-- Uncomment this if you want to add card voutchers -->
+      <!-- <div class="mt-3 mb-3">
+      <div class="card voutchers">
+        <div class="voutcher-divider">
+          <div class="voutcher-left text-center">
+            <span class="voutcher-name">Monday Happy</span>
+            <h5 class="voutcher-code">#MONHPY</h5>
+          </div>
+          <div class="voutcher-right text-center border-left">
+            <h5 class="discount-percent">20%</h5>
+            <span class="off">Off</span>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    </div>
+  </div>
+
+  <div class="text-center w-100" *ngIf="loader">
+    <app-spinner></app-spinner>
+  </div>
+</div>

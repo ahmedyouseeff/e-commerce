@@ -1,0 +1,102 @@
+<!-- <div class="w-100" id="cover">
+</div> -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up"
+        data-aos-delay="200">
+        <h1>In The Mood For</h1>
+        <h1>New Styles</h1>
+        <div class="d-flex justify-content-center justify-content-lg-start">
+          <a href="#" class="btn-get-started scrollto">Get Started</a>
+        </div>
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+        <img src="assets/img/gg.png" class="img-fluid" alt="" />
+      </div>
+    </div>
+  </div>
+
+</section><!-- End Hero -->
+
+<!-- ======= Clients Section ======= -->
+<section id="clients" class="clients section-bg">
+  <div class="container">
+
+    <div class="row" data-aos="zoom-in">
+
+      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Cliens Section -->
+
+<!-- ======= Services Section ======= -->
+<section id="services" class="services section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Men's Section</h2>
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in
+        iste officiis commodi quidem hic quas.</p>
+    </div>
+
+    <div class="row">
+      <div *ngFor="let product of products" class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in"
+        data-aos-delay="100">
+        <div class="icon-box" *ngIf="product.category === mens">
+          <div class="icon"><i class="bx bxl-dribbble"></i></div>
+          <h4><a href="">{{product.title}}</a></h4>
+          <p><img src="{{product.image}}" alt="" width="50px"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Services Section -->
+
+<!-- ======= Cta Section ======= -->
+<section id="cta" class="cta">
+  <div class="container" data-aos="zoom-in">
+
+    <div class="row">
+      <div class="col-lg-9 text-center text-lg-start">
+        <h3>Call To Action</h3>
+        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+      <div class="col-lg-3 cta-btn-container text-center">
+        <a class="cta-btn align-middle" href="#">Call To Action</a>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Cta Section -->

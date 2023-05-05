@@ -1,0 +1,50 @@
+.voutchers {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  overflow: hidden;
+}
+
+.voutcher-divider {
+  display: flex;
+}
+
+.voutcher-left {
+  width: 60%
+}
+
+.voutcher-name {
+  color: grey;
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.voutcher-code {
+  color: red;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.voutcher-right {
+  width: 40%;
+  background-color: purple;
+  color: #fff;
+}
+
+.discount-percent {
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  top: 5px;
+}
+
+.off {
+  font-size: 14px;
+  position: relative;
+  bottom: 5px;
+}
+
+
+/*  */

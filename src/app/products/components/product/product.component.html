@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="image-container">
+    <img src="{{data.image}}" alt="{{data.image}}" class="img-fluid rounded thumbnail-image">
+  </div>
+  <div class="product-detail-container p-2">
+    <div class="d-flex justify-content-between align-items-center">
+      <h5 class="dress-name ps-2" routerLink="/product-details/{{data.id}}">{{data.title}}</h5>
+      <div class="d-flex flex-column mb-2">
+        <span class="new-price">${{data.price}}</span>
+        <del class="old-price text-right">${{data.price + data.price * (25/100)}}</del>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center pt-1">
+      <div class="color-select d-flex ">
+        <input type="button" name="grey" class="btn creme">
+        <input type="button" name="red" class="btn red ml-2">
+        <input type="button" name="blue" class="btn blue ml-2">
+      </div>
+      <div class="d-flex ">
+        <span class="item-size mr-2 btn" type="button">S</span>
+        <span class="item-size mr-2 btn" type="button">M</span>
+        <span class="item-size btn" type="button">L</span>
+      </div>
+    </div>
+    <div *ngIf="data.rating" class="d-flex justify-content-between align-items-center pt-1">
+      <div>
+        <i class="fa fa-star-o rating-star my-2"></i>
+        <span class="rating-number">{{data.rating.rate}}</span>
+      </div>
+      <button class="buy" *ngIf="!showenBtn" (click)="showenBtn= true">BUY +</button>
+      <div class="d-flex w-50" *ngIf="showenBtn">
+        <input type="number" class="form-control" [(ngModel)]="amount" min="0">
+        <button class="buy" (click)="addProduct();showenBtn= false">BUY +</button>
+      </div>
+    </div>
+  </div>
+</div>

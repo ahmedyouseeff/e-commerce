@@ -1,0 +1,81 @@
+<div class="container" style="margin-top: 150px; margin-bottom: 100px;">
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Cart Details</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+
+    <div class="modal-body">
+      <ul class="responsive-table">
+        <li class="table-header">
+          <div class="col col-1">Image</div>
+          <div class="col col-2">Name</div>
+          <div class="col col-3">Quantity</div>
+          <div class="col col-4">Total Price</div>
+        </li>
+
+        <li class="table-row" *ngFor="let product of products">
+          <div class="col col-1" data-label="Job Id"><img width="50px" src="{{product.item.image}}"
+              alt="{{product.item.image}}"></div>
+          <div class="col col-2" data-label="Customer Name">{{product.item.title}}</div>
+          <div class="col col-3" data-label="Amount">X{{product.quantity}}</div>
+          <div class="col col-4" data-label="Payment Status">{{product.item.price * product.quantity}}</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+
+  <div class="filter-box">
+    <form class="d-flex gap-3" [formGroup]="filterForm">
+      <div>
+        <label>Start Date</label>
+        <input formControlName="startDate" type="date" class="form-control">
+      </div>
+      <div>
+        <label>End Date</label>
+        <input formControlName="endDate" type="date" class="form-control">
+      </div>
+
+      <button type="button" (click)="applyFilter()" class="btn btn-outline-primary">Search</button>
+    </form>
+
+  </div>
+
+  <div class="table-wrapper">
+    <table class="fl-table">
+      <thead>
+        <tr>
+          <th>Cart ID</th>
+          <th>User ID</th>
+          <th>Date</th>
+          <th>Quantity</th>
+          <th>Products</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of cartProducts; index as i">
+        <tr>
+          <td>{{item.id}}</td>
+          <td>{{item.userId}}</td>
+          <td>{{item.date | date: 'MMM-d-yyyy, h:mm a'}}</td>
+          <td>{{item.products.length}}</td>
+          <td>
+            <div *ngFor="let p of item.products">
+              <span>ID:</span> <span>{{p.productId}}</span> : <span>Quantity:</span><span>{{p.quantity}}</span>
+            </div>
+          </td>
+          <td>
+            <button (click)="deleteCart(item.id)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+            <button class="btn btn-primary ms-2" (click)="openVerticallyCentered(content); viewCart(i)"><i
+                class="fa fa-eye"></i></button>
+          </td>
+        </tr>
+      <tbody>
+    </table>
+  </div>
+</div>
