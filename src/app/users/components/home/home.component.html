@@ -73,7 +73,7 @@
         data-aos-delay="100">
         <div class="icon-box" *ngIf="product.category === mens">
           <div class="icon"><i class="bx bxl-dribbble"></i></div>
-          <h4><a href="">{{product.title}}</a></h4>
+          <h4><a routerLink="/product-details/{{product.id}}">{{product.title}}</a></h4>
           <p><img src="{{product.image}}" alt="" width="50px"></p>
         </div>
       </div>

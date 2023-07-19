@@ -12,7 +12,7 @@ export class ProductComponent implements OnInit {
 
   showenBtn: boolean = false;
 
-  amount!: number;
+  amount: number = 1;
   constructor() {}
 
   ngOnInit(): void {}

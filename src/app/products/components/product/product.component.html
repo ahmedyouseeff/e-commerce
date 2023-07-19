@@ -27,8 +27,7 @@
         <i class="fa fa-star-o rating-star my-2"></i>
         <span class="rating-number">{{data.rating.rate}}</span>
       </div>
-      <button class="buy" *ngIf="!showenBtn" (click)="showenBtn= true">BUY +</button>
-      <div class="d-flex w-50" *ngIf="showenBtn">
+      <div class="d-flex w-50">
         <input type="number" class="form-control" [(ngModel)]="amount" min="0">
         <button class="buy" (click)="addProduct();showenBtn= false">BUY +</button>
       </div>
